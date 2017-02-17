@@ -1,0 +1,34 @@
+*{
+	box-sizing: border-box;
+	font-size: 0;
+}
+
+body{
+	background: black;
+}
+
+#scene .displayTime{
+	font-family: 'Oswald', sans-serif;
+	font-size: 4vw;
+	vertical-align: center;
+	text-align: center;
+	color: white;
+	margin: auto;
+	padding: 2%;
+	position: absolute;
+	right: 24.5%;
+	top: 7.6%;
+}
+
+.buildingImage{
+	max-width: 100%;
+	width: 100%;
+	margin: auto;
+	vertical-align: center;
+	position: relative;
+
+}
+#scene{
+	position: relative;
+}
+
