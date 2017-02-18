@@ -1,28 +1,25 @@
 var updateLoop = window.setInterval(main_loop, 1000);
-var userInput = window.setInterval(user_input, 100)
+//var userInput = window.setInterval(user_input, 100)
 var isHoveredOver = false
 var theTime = {hour: 0, minute: 0, second: 0}
 var backgroundHex = {red: "", green: "", blue: ""}
-var charTransform = 0
+var charTransform = 0	
 
+var displayElement = document.querySelector(".displayTime")
+displayElement.addEventListener("mouseover", mouseOverTime)
+displayElement.addEventListener("mouseout", mouseOutTime)
 
-function user_input(){
-	
-	var displayElement = document.querySelector(".displayTime")
-	
-	if(displayElement){
+function mouseOverTime() {
 
-		displayElement.addEventListener("mouseover", mouseOverTime)
-		displayElement.addEventListener("mouseout", mouseOutTime)
-	}
+	isHoveredOver = true
 
-	function mouseOverTime() {
-		isHoveredOver = true
-	}
+}
 
-	function mouseOutTime() {
-		isHoveredOver = false
-	}
+function mouseOutTime() {
+
+	var timeElement =  document.querySelector(".displayTime")
+	timeElement.innerHTML = theTime.hour + ":" + theTime.minute + ":" + theTime.second
+	isHoveredOver = false
 
 }
 
@@ -66,6 +63,7 @@ function define_bg_color(){
 function display_time(){
 
 	if (isHoveredOver === false){
+
 		var timeElement =  document.querySelector(".displayTime")
 		timeElement.innerHTML = theTime.hour + ":" + theTime.minute + ":" + theTime.second
 	}
@@ -74,7 +72,6 @@ function display_time(){
 
 		document.querySelector(".displayTime").innerHTML = backgroundHex.red + ":" + backgroundHex.green + ":" + backgroundHex.blue
 	}
-	console.log(isHoveredOver)
 }
 
 club_goer()
@@ -91,31 +88,27 @@ function club_goer(){
 
 function club_goer_anim(){
 
-	var character = document.querySelector("#characterImg")
-	var charecterStyle = window.getComputedStyle(character)
 	var charContainer = document.querySelector(".character")
 	var charContainerStyle = window.getComputedStyle(charContainer)
-	
-	charTransform = charTransform + 1
-	console.log(charTransform)
-	charContainer.style.right = theTime.second*5+'px'
 
-	if (theTime.second > 3){
+	if (theTime.second % 2 === 0){
 
-		character.style.opacity = 1
+		charContainer.style.transition = "none"
+		charContainer.style.right = "-6%"
+		charContainer.style.opacity = 1
+		charContainer.style.width = "3vw"
+		charContainer.style.width = "5vh"
 		
 	}
 
-	if (theTime.second > 42){
-		
+	if (theTime.second % 2 != 0){
+
+		charContainer.style.transition = "linear 1s"
+		charContainer.style.opacity = 1
 		charContainer.style.right = "30%"
-	}
-
-	if (theTime.second > 43){
-
-		character.style.opacity = 0
-		character.style.right = "10%"
-
+		charContainer.style.width = "1.8vw"
+		charContainer.style.width = "3vh"
+		
 	}
 }
 

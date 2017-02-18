@@ -35,9 +35,9 @@ body{
 
 .character{
 	right: 10%;
-	bottom: 18%;
+	bottom: 20%;
 	height: 5vh;
-	width: 2vw;
+	width: 3vw;
 	max-width: 100%;
 	position: absolute;
 	transition: .5s linear;
@@ -46,7 +46,7 @@ body{
 #characterImg{
 	width: 100%;
 	vertical-align: bottom;
-	transition: .5s linear;
+	
 
 }
 
