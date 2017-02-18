@@ -28,7 +28,25 @@ body{
 	position: relative;
 
 }
+
 #scene{
 	position: relative;
+}
+
+.character{
+	right: 10%;
+	bottom: 18%;
+	height: 5vh;
+	width: 2vw;
+	max-width: 100%;
+	position: absolute;
+	transition: .5s linear;
+}
+
+#characterImg{
+	width: 100%;
+	vertical-align: bottom;
+	transition: .5s linear;
+
 }
 
