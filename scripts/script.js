@@ -4,6 +4,7 @@ var isHoveredOver = false
 var theTime = {hour: 0, minute: 0, second: 0}
 var backgroundHex = {red: "", green: "", blue: ""}
 var charTransform = 0	
+var charSelector = 1
 
 var displayElement = document.querySelector(".displayTime")
 displayElement.addEventListener("mouseover", mouseOverTime)
@@ -55,6 +56,7 @@ function define_bg_color(){
 	backgroundHex.blue = (bgColor.b).toString(16)
 	var page = document.getElementById("scene")
 	page.style.background = bgColorHex
+	page.style.transition = ".2s linear"
 
 	return bgColorHex
 
@@ -78,9 +80,10 @@ club_goer()
 
 function club_goer(){
 	
+	
 	var charContainer = document.querySelector(".character")
 	var character = document.createElement("img")
-	character.src = "images/tmaster.gif"
+	//character.src = "images/characters/tmaster.gif"
 	character.id = "characterImg"
 	charContainer.appendChild(character)
 
@@ -88,27 +91,39 @@ function club_goer(){
 
 function club_goer_anim(){
 
+	var character = document.getElementById("characterImg")
 	var charContainer = document.querySelector(".character")
 	var charContainerStyle = window.getComputedStyle(charContainer)
+	var url = "images/characters/"
+	var characters = [url+"tmaster.gif", url+"happyGirl.gif", url+"dude.gif",url+"wolf.gif",url+"bulbasaur.gif", url+"dog.gif",url+"turtle.gif",url+"dove.gif",url+"masterChief.gif"]
+
+	var randomSelector = Math.floor((Math.random() * characters.length) + 0)
+	console.log(charSelector)
 
 	if (theTime.second % 2 === 0){
+		if (charSelector === characters.length-1){
+			charSelector = 0
+		}
+		else{
+			charSelector = charSelector + 1
+		}
 
 		charContainer.style.transition = "none"
+		character.src = characters[charSelector]
 		charContainer.style.right = "-6%"
-		charContainer.style.opacity = 1
-		charContainer.style.width = "3vw"
-		charContainer.style.width = "5vh"
+		//charContainer.style.width = "3vw"
+		//charContainer.style.width = "5vh"
 		
 	}
 
 	if (theTime.second % 2 != 0){
 
 		charContainer.style.transition = "linear 1s"
-		charContainer.style.opacity = 1
-		charContainer.style.right = "30%"
-		charContainer.style.width = "1.8vw"
-		charContainer.style.width = "3vh"
+		charContainer.style.right = "28%"
+		//charContainer.style.width = "1.8vw"
+		//charContainer.style.width = "3vh"
 		
 	}
+	
 }
 
