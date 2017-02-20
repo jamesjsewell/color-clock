@@ -4,6 +4,7 @@
 }
 
 body{
+	
 	background: black;
 }
 
@@ -18,7 +19,7 @@ body{
 	position: absolute;
 	right: 24.5%;
 	top: 7.6%;
-}
+	}
 
 .buildingImage{
 	max-width: 100%;
@@ -27,11 +28,11 @@ body{
 	vertical-align: center;
 	position: relative;
 
-}
+	}
 
 #scene{
 	position: relative;
-}
+	}
 
 .character{
 	right: 10%;
@@ -43,14 +44,12 @@ body{
 	transition: .5s linear;
 	/*background: blue;*/
 
-}
+	}
 
 #characterImg{
 	/*height: 10vh;*/
 	max-width:100%;
 	position: absolute;
 	bottom: 0%;
-	
-
 }
 
