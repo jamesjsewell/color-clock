@@ -115,7 +115,7 @@ function character_anim(){
 	var charContainer = document.querySelector(".character")
 	var charContainerStyle = window.getComputedStyle(charContainer)
 	var url = "images/characters/"
-	var characters = [url+"tmaster.gif", url+"happyGirl.gif", url+"dude.gif",url+"wolf.gif",url+"bulbasaur.gif", url+"dog.gif",url+"turtle.gif",url+"dove.gif",url+"masterChief.gif"]
+	var characters = [url+"tmaster.gif", url+"happyGirl.gif", url+"dude.gif",url+"wolf.gif",url+"bulbasaur.gif", url+"dog.gif",url+"turtle.gif",url+"dove.gif",url+"masterChief.gif",url+"brian.gif"]
 
 	//creates a toggle to switch out characters and move them towards the door 
 	if (theTime.second % 2 === 0){
